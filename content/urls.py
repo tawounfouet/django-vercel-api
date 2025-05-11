@@ -3,7 +3,8 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import (
     UserViewSet, UserProfileViewSet, CategoryViewSet, TagViewSet,
-    PostViewSet, PodcastViewSet, VideoViewSet, CommentViewSet
+    PostViewSet, PodcastViewSet, VideoViewSet, CommentViewSet,
+    # api_root
 )
 
 router = DefaultRouter()
@@ -17,5 +18,6 @@ router.register(r'videos', VideoViewSet)
 router.register(r'comments', CommentViewSet)
 
 urlpatterns = [
+    # path('', api_root, name='api-root'),
     path('', include(router.urls)),
 ]
