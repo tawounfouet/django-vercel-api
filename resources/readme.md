@@ -21,3 +21,20 @@ chmod +x build.sh
 ```
 
 ```sh
+pip install whitenoise
+```
+
+```sh
+touch .gitignore
+```
+
+### ✅ 4. Run collectstatic Locally and Push Static Files to Git
+Because Vercel doesn't let Django run shell commands during build:
+```sh
+python manage.py collectstatic --noinput
+git add staticfiles_build
+git commit -m "Add static files"
+git push
+```
+Make sure staticfiles_build/ is not in .gitignore.
+
